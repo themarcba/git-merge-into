@@ -12,7 +12,7 @@ const {
     noBranchesMessage,
     uncommittedMessage,
     completedMessage,
-} = require('./texts')
+} = require('../texts')
 
 const checkout = async branch => {
     try {
