@@ -52,7 +52,6 @@ const run = async () => {
         const branches = yargs(hideBin(process.argv)).argv._
         const { current, modified, not_added } = await git.status()
 
-        console.log({ modified, not_added })
         if (modified.length) return uncommittedMessage(modified)
         if (not_added.length) return notAddedMessage(not_added)
         if (!branches.length) return noBranchesMessage()
