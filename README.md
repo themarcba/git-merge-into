@@ -28,7 +28,8 @@ $ gmi branch [... more_branches]
 ## Features
 
 -   Merge current branches into a list of given branches
--   Check if current branch has unstaged changes. (The tool will notify you if there are unstaged changes)
+-   Detect if current branch has unstaged changes
+-   Detect if current branch has unstaged files
 -   Detect if there is a conflict and revert the merge
 -   Detect if a branch doesn't exist
 -   Give a summary of into which branches were actually merged

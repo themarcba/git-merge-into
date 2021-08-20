@@ -13,6 +13,7 @@ const {
     mergeMessage,
     noBranchesMessage,
     uncommittedMessage,
+    notAddedMessage,
     completedMessage,
 } = require('../texts')
 
@@ -49,9 +50,10 @@ const merge = async (current, branch) => {
 const run = async () => {
     try {
         const branches = yargs(hideBin(process.argv)).argv._
-        const { current, modified } = await git.status()
+        const { current, modified, not_added } = await git.status()
 
         if (modified.length) return uncommittedMessage(modified)
+        if (not_added.length) return notAddedMessage(not_added)
         if (!branches.length) return noBranchesMessage()
         let mergeErrors = 0
         let count = 0

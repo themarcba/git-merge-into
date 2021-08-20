@@ -31,6 +31,13 @@ const uncommittedMessage = modified => {
     modified.forEach(file => log(`  - ${file}`, 'warning'))
 }
 
+const notAddedMessage = notAdded => {
+    log(
+        'Please commit the following uncommitted files before merging:',
+        'warning',
+    )
+    notAdded.forEach(file => log(`  - ${file}`, 'warning'))
+}
 const noBranchesMessage = () => {
     log(`✘ No branches specified`, 'error')
 }
@@ -78,6 +85,7 @@ module.exports = {
     checkedOutMessage,
     checkoutErrorMessage,
     uncommittedMessage,
+    notAddedMessage,
     noBranchesMessage,
     mergeMessage,
     conflictMessage,
