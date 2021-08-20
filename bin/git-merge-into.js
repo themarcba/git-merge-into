@@ -23,6 +23,7 @@ const checkout = async branch => {
         checkedOutMessage(branch)
         return true
     } catch (error) {
+        console.log(error.message)
         checkoutErrorMessage(branch)
         return false
     }
@@ -31,7 +32,6 @@ const checkout = async branch => {
 const merge = async (current, branch) => {
     try {
         const mergeSummary = await git.mergeFromTo(current, branch, {
-            '--no-commit': true,
             '--no-ff': true,
         })
         mergeMessage(current, branch, mergeSummary)
@@ -52,6 +52,7 @@ const run = async () => {
         const branches = yargs(hideBin(process.argv)).argv._
         const { current, modified, not_added } = await git.status()
 
+        console.log({ modified, not_added })
         if (modified.length) return uncommittedMessage(modified)
         if (not_added.length) return notAddedMessage(not_added)
         if (!branches.length) return noBranchesMessage()
@@ -63,7 +64,7 @@ const run = async () => {
             const checkoutResult = await checkout(branch)
             if (checkoutResult) {
                 const mergeResult = await merge(current, branch)
-                if (mergeResult) mergeErrors += 1
+                if (!mergeResult) mergeErrors += 1
             } else {
                 mergeErrors += 1
             }

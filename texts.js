@@ -73,11 +73,12 @@ const completedMessage = (branches, mergeErrors) => {
         } merges successful!`,
         'success',
     )
-    if (mergeErrors !== branches.length)
+    if (mergeErrors > 0) {
         log(
             `✘ ${mergeErrors}/${branches.length} branches could not be merged`,
             'error',
         )
+    }
 }
 
 module.exports = {

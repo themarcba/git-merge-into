@@ -1,6 +1,6 @@
 {
     "name": "git-merge-into",
-    "version": "1.0.0-build4",
+    "version": "1.0.0-build5",
     "description": "Merges the current branch into a given number of branches",
     "main": "index.js",
     "scripts": {
