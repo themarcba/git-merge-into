@@ -1,0 +1,32 @@
+{
+  "name": "git-merge-into",
+  "version": "1.0.0",
+  "description": "Merges the current branch into a given number of branches",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "git",
+    "merge",
+    "cli"
+  ],
+  "author": "Marc Backes",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "simple-git": "^2.44.0",
+    "yargs": "^17.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/themarcba/git-merge-into.git"
+  },
+  "bugs": {
+    "url": "https://github.com/themarcba/git-merge-into/issues"
+  },
+  "homepage": "https://github.com/themarcba/git-merge-into#readme"
+}
