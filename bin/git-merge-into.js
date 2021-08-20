@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
 const git = require('simple-git')()
@@ -70,4 +72,5 @@ const run = async () => {
         console.log(red(error.message))
     }
 }
+
 run()
