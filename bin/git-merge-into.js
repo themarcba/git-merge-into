@@ -23,7 +23,6 @@ const checkout = async branch => {
         checkedOutMessage(branch)
         return true
     } catch (error) {
-        console.log(error.message)
         checkoutErrorMessage(branch)
         return false
     }

@@ -20,7 +20,10 @@ const checkedOutMessage = branch => {
 }
 
 const checkoutErrorMessage = branch => {
-    log(`  • Branch '${branch}' could not be checked out`, 'error')
+    log(
+        `  • Branch '${branch}' could not be checked out. It looks missing?`,
+        'error',
+    )
 }
 // -------------------------------------------------
 const uncommittedMessage = modified => {
